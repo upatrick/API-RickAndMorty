@@ -254,7 +254,23 @@
 
         processCharacterPage("https://rickandmortyapi.com/api/character");
 
-        
+        axios.all([
+            axios.get('https://rickandmortyapi.com/api/character'),
+            axios.get('https://rickandmortyapi.com/api/location'),
+            axios.get('https://rickandmortyapi.com/api/episode')
+        ])
+            .then(axios.spread(function (characterResponse, locationResponse, episodeResponse) {
+                const characterCount = characterResponse.data.info.count;
+                const locationCount = locationResponse.data.info.count;
+                const episodeCount = episodeResponse.data.info.count;
+
+                document.getElementById('characterCount').textContent = `PERSONAGENS: ${characterCount}`;
+                document.getElementById('locationCount').textContent = `LOCALIZAÇÕES: ${locationCount}`;
+                document.getElementById('episodeCount').textContent = `EPISÓDIOS: ${episodeCount}`;
+            }))
+            .catch(function (error) {
+                console.log(error);
+            });
     </script>
   </body>
 </html>

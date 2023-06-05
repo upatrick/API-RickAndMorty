@@ -205,6 +205,55 @@
             }
         }
 
+        async function processCharacterPage(pageURL) {
+            try {
+                const characterApiData = await getJsonApi(pageURL);
+
+                const characterResults = characterApiData.results;
+
+                const characterListDiv = document.createElement("div");
+                characterListDiv.id = "character-list";
+                characterListDiv.className = "character-container";
+
+                characterResults.forEach(character => {
+                    const characterDiv = document.createElement("div");
+                    characterDiv.className = "character-card";
+
+                    const characterImgHTML = document.createElement("img");
+                    characterImgHTML.src = character.image;
+                    characterImgHTML.className = "character-image";
+
+                    const characterNameElement = document.createElement("div");
+                    characterNameElement.className = "character-name";
+                    characterNameElement.innerText = character.name;
+
+                    const characterLocationElement = document.createElement("div");
+                    characterLocationElement.className = "character-location";
+                    characterLocationElement.innerText = character.location.name;
+
+                    characterDiv.appendChild(characterImgHTML);
+                    characterDiv.appendChild(characterNameElement);
+                    characterDiv.appendChild(characterLocationElement);
+
+                    characterListDiv.appendChild(characterDiv);
+                });
+
+                const oldCharacterListDiv = document.getElementById("character-list");
+                if (oldCharacterListDiv) {
+                    oldCharacterListDiv.replaceWith(characterListDiv);
+                } else {
+                    document.getElementById("character-list").appendChild(characterListDiv);
+                }
+
+                setupPaginationButton(true, characterApiData.info.next);
+                setupPaginationButton(false, characterApiData.info.prev);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+
+        processCharacterPage("https://rickandmortyapi.com/api/character");
+
         
     </script>
   </body>

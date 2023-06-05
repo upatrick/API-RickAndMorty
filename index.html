@@ -183,6 +183,16 @@
             }
         }
 
+        async function getJsonApi(pageURL) {
+            try {
+                const response = await axios.get(pageURL);
+                return response.data;
+            } catch (error) {
+                console.log(error);
+                throw error;
+            }
+        }
+
         
     </script>
   </body>

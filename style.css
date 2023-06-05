@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@600&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "poppins", sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+
+        }
+        .character-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .character-card {
+            width: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .character-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .character-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .character-location {
+            font-style: italic;
+        }
+        .imgHeader {
+            width: 80px;
+            margin-top: 20px;   
+        }
+        .h1 {
+            font-family: "poppins", sans-serif;
+            text-align: center;
+            font-size: 60px;
+            color: rgb(8, 95, 27);
+        }
+        h3 {
+            padding-top: 15px;
+            color: rgb(8, 95, 27);
+            font-size: x-large;
+            margin-bottom: -5px;
+        }
+        input {
+            border: 2px solid rgb(221, 218, 218);
+            border-radius: 7px;
+            width: 650px;
+            height: 30px;
+            margin-left: calc(50% - 18%);
+            margin-bottom: 40px;
+        }
+        input::placeholder {
+            color: rgb(204, 201, 201);
+            padding-left: 15px;
+        }
+        .imgRM {
+            width: 30rem;
+            align-self: center;
+            transform: translate(0, -15%); 
+            margin-top: 50px;
+        }
+        .bgGrenn {
+            background-color: rgb(32, 49, 35);
+            width: 100%;
+            height: 30vh;
+            align-items: center;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .colorP {
+            color: gray;
+        }
+        .marginP {
+            margin: 20px;
+        }
+        .footer{
+            width: 100%;
+            height: 10vh;
+            background-color: rgb(32, 49, 35);
+            align-items: center;
+        }
+        #middle-container {
+            width: 80%;
+            margin-left: 10%;
+        }
+        .bgGren {
+            background-color: rgb(32, 49, 35);
+        }

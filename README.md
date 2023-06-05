@@ -9,7 +9,6 @@ Este é um projeto de uma página web que utiliza a API de Rick and Morty para b
 - Busca de personagens: você pode digitar um nome na caixa de pesquisa e clicar no botão de busca para encontrar personagens correspondentes.
 - Exibição de personagens: os personagens encontrados são exibidos na página em forma de cartões, mostrando sua imagem, nome, status, espécie, última localização conhecida e último episódio em que apareceu.
 - Contagem de personagens, localizações e episódios: a contagem total de personagens, localizações e episódios é exibida no rodapé da página e é atualizada automaticamente.
-- Estilização responsiva: a página utiliza o framework Bootstrap e é responsiva, adaptando-se a diferentes tamanhos de tela.
 
 ## Tecnologias utilizadas
 

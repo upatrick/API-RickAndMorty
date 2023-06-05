@@ -193,6 +193,18 @@
             }
         }
 
+        function setupPaginationButton(isNext, buttonPageURL = null) {
+            const buttonId = isNext ? "next-page-button" : "prev-page-button";
+            const buttonHTML = document.getElementById(buttonId);
+
+            if (buttonPageURL) {
+                buttonHTML.setAttribute("onclick", "processCharacterPage('" + buttonPageURL + "')");
+                buttonHTML.style.display = "inline-block";
+            } else {
+                buttonHTML.style.display = "none";
+            }
+        }
+
         
     </script>
   </body>
